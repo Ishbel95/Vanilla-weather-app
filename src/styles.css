@@ -1,0 +1,132 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  color: rgb(45, 44, 44);
+}
+h1 {
+  font-size: 2.9rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+  margin: 2px;
+  line-height: 1;
+}
+
+button i {
+  width: 2rem;
+}
+.weather-app {
+  border: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  padding: 15px;
+  display: block;
+  width: 480px;
+  height: 735px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.navbar {
+  border-radius: 3px;
+  max-width: 450px;
+  margin: 10px 0;
+  border: 1px solid #a8ccfc;
+  background-color: #a8ccfc;
+  box-shadow: 2px 2px 8px rgb(129, 128, 128);
+}
+.btn {
+  margin: 2px;
+  margin-left: 34px;
+  border-color: #ffffff;
+  background-color: #ffffff;
+  color: rgb(35, 34, 34);
+}
+.btn:hover {
+  background-color: #a8ccfc;
+  border-color: #a8ccfc;
+}
+.weather-details {
+  margin: 5px;
+}
+.current-weather {
+  position: relative;
+  margin: 0;
+  left: 300px;
+  bottom: 176px;
+}
+.current-weather span {
+  font-size: 2rem;
+  font-weight: 200;
+}
+.current-weather small {
+  font-weight: 200;
+  line-height: 0.2;
+}
+.celsius,
+.fahrenheit {
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(45, 44, 44);
+}
+.current-weather img {
+  width: 100px;
+  margin: 4px;
+}
+.current-weather p {
+  margin: 5px;
+}
+.future-weather-box {
+  border: 2px solid #a8ccfc;
+  background-color: #a8ccfc;
+  box-shadow: 1px 1px 8px rgb(129, 128, 128);
+  max-width: 450px;
+  position: relative;
+  left: 10px;
+  top: -165px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.future-weather {
+  width: 61px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 0.2rem 0.8rem;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 90%;
+}
+.future-weather p {
+  margin-bottom: 0.5rem;
+}
+
+.future-weather img {
+  width: 2.1rem;
+  height: 1.9rem;
+}
+
+.future-weather span {
+  font-weight: 550;
+}
+.future-weather small {
+  font-weight: 400;
+}
+.cloud-container {
+  max-width: 460px;
+}
+.cloud-container i {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  position: relative;
+  top: -150px;
+  margin: 12px;
+}
+.sun img {
+  width: 18rem;
+  position: relative;
+  top: -423px;
+  left: 173px;
+}
+.open-source-link {
+  position: relative;
+  top: -21px;
+  left: 320px;
+}
