@@ -23,7 +23,7 @@ function changeDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  return `${day} ${hour}:${minutes}`;
+  return `Last updated: <br>${day} ${hour}:${minutes}`;
 }
 
 // use api to get real temperature and weather description
