@@ -1,5 +1,4 @@
 // get the current days and time
-
 function changeDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -26,10 +25,13 @@ function changeDate(timestamp) {
 
   return `${day} ${hour}:${minutes}`;
 }
-// use api to get real temperature and weather description
 
+// use api to get real temperature and weather description
 function showCityTemperature(response) {
   console.log(response);
+  celsiusTemperature = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#temp-change");
+  temperatureElement.innerHTML = celsiusTemperature;
   document.querySelector("#temp-change").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -46,14 +48,14 @@ function showCityTemperature(response) {
   document.querySelector("#current-time").innerHTML = changeDate(
     response.data.dt * 1000
   );
+
+  let currentWeatherIcon = response.data.weather[0].icon;
   let weatherIcon = document.querySelector("#current-weather-icon");
   weatherIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
-  document
-    .querySelector("current-weather-icon")
-    .setAttribute("alt", "response.data.weather[0].description");
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 // build url and use axios to get url then execute showCityTemperature function.
@@ -71,24 +73,14 @@ function weatherSearch(event) {
   selectedCity(city);
 }
 
-//on load search for london
-selectedCity("London");
-
-//if search it will go to the function weatherSearch and then selectedCity
-let searchButton = document.querySelector("#search-button");
-searchButton.addEventListener("click", weatherSearch);
-
 //change the location, temperature and weather description to current location using info from api.
-
 function showTemp(response) {
   console.log(response);
   document.querySelector("#temp-change").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#city").style.fontSize = "1.8rem";
-
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -98,7 +90,6 @@ function showTemp(response) {
 }
 
 // get url using axios and current coordinates all from api
-
 function getPosition(position) {
   console.log(position);
   let latitude = position.coords.latitude;
@@ -111,39 +102,41 @@ function getPosition(position) {
 }
 
 //get current position function
-
 function myPosition(event) {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
-//select button and execute myPosition function
-
-let geoButton = document.querySelector("#geo-location");
-geoButton.addEventListener("click", myPosition);
-
 //convert temperature to fahrenheit on click
-
-function fahrenheitChange(event) {
+function showFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-change");
-  let fahrenheitTemp = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((fahrenheitTemp * 9) / 5 + 32);
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
-
-// select fahrenheit button and execute function above
-
-let fahrenheit = document.querySelector(".fahrenheit");
-fahrenheit.addEventListener("click", fahrenheitChange);
 
 //convert temp to celsius on click
-
-function celsiusChange(event) {
+function showCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temp-change");
-  let celsiusTemp = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round(((celsiusTemp - 32) * 5) / 9);
+  document.querySelector("#temp-change").innerHTML =
+    Math.round(celsiusTemperature);
 }
-// select celsius button and execute function above
 
-let celsius = document.querySelector(".celsius");
-celsius.addEventListener("click", celsiusChange);
+let celsiusTemperature = null;
+//on load search for london
+selectedCity("London");
+
+// select fahrenheit button and execute function
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+//if search it will go to the function weatherSearch and then selectedCity
+let searchButton = document.querySelector("#search-button");
+searchButton.addEventListener("click", weatherSearch);
+
+// select celsius button and execute function
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsius);
+
+//select button and execute myPosition function
+let geoButton = document.querySelector("#geo-location");
+geoButton.addEventListener("click", myPosition);
