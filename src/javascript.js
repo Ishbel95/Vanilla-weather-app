@@ -46,6 +46,14 @@ function showCityTemperature(response) {
   document.querySelector("#current-time").innerHTML = changeDate(
     response.data.dt * 1000
   );
+  let weatherIcon = document.querySelector("#current-weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  document
+    .querySelector("current-weather-icon")
+    .setAttribute("alt", "response.data.weather[0].description");
 }
 
 // build url and use axios to get url then execute showCityTemperature function.
