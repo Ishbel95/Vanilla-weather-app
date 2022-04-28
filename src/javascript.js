@@ -110,6 +110,8 @@ function myPosition(event) {
 function showFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-change");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
@@ -117,6 +119,8 @@ function showFahrenheit(event) {
 //convert temp to celsius on click
 function showCelsius(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   document.querySelector("#temp-change").innerHTML =
     Math.round(celsiusTemperature);
 }

@@ -67,8 +67,14 @@ button i {
 #fahrenheit {
   font-size: 1rem;
   text-decoration: none;
-  color: rgb(45, 44, 44);
 }
+
+.current-weather .active {
+  color: rgb(45, 44, 44);
+  cursor: default;
+  text-decoration: none;
+}
+
 .current-weather img {
   width: 100px;
   margin: 4px;
