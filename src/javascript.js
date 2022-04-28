@@ -1,6 +1,7 @@
 // get the current days and time
 
-function changeDate(date) {
+function changeDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -23,12 +24,8 @@ function changeDate(date) {
     minutes = `0${minutes}`;
   }
 
-  return `${day}: ${hour}:${minutes}`;
+  return `${day} ${hour}:${minutes}`;
 }
-let currentDate = new Date();
-let currentTimeElement = document.querySelector("#current-time");
-currentTimeElement.innerHTML = changeDate(currentDate);
-
 // use api to get real temperature and weather description
 
 function showCityTemperature(response) {
@@ -38,11 +35,17 @@ function showCityTemperature(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#weather-description").style.textTransform =
+    "capitalize";
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#feels-like").innerHTML =
     response.data.main.feels_like;
+
+  document.querySelector("#current-time").innerHTML = changeDate(
+    response.data.dt * 1000
+  );
 }
 
 // build url and use axios to get url then execute showCityTemperature function.
