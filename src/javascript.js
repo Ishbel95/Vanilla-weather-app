@@ -25,6 +25,7 @@ function changeDate(timestamp) {
 
   return `Last updated: <br>${day} ${hour}:${minutes}`;
 }
+// formate day from api using array
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -59,7 +60,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+//get apiurl using axios for the forecast
 function getWeatherForecast(coordinates) {
   let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/onecall?";
