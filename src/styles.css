@@ -44,8 +44,7 @@ button i {
 }
 
 #current-time {
-  font-size: 1.4rem;
-  height: 50px;
+  font-size: 1.2rem;
   padding: 5px;
 }
 .weather-details {
@@ -53,7 +52,7 @@ button i {
 }
 .current-weather {
   position: relative;
-  margin: 0;
+
   left: 300px;
   bottom: 176px;
 }
@@ -61,9 +60,10 @@ button i {
   font-size: 2rem;
   font-weight: 200;
 }
-.current-weather small {
+.current-weather #temp-change {
   font-weight: 200;
-  line-height: 0.2;
+  line-height: 0.1;
+  font-size: 3rem;
 }
 #celsius,
 #fahrenheit {
@@ -78,8 +78,7 @@ button i {
 }
 
 .current-weather img {
-  width: 100px;
-  margin: 4px;
+  width: 90px;
 }
 .current-weather p {
   margin: 5px;
@@ -134,7 +133,7 @@ button i {
 .sun img {
   width: 18rem;
   position: relative;
-  top: -423px;
+  top: -404px;
   left: 173px;
   animation: blur 5s forwards infinite alternate;
 }
