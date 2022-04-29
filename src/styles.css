@@ -114,10 +114,10 @@ button i {
   height: 1.9rem;
 }
 
-.future-weather span {
+.future-weather .max-temp {
   font-weight: 550;
 }
-.future-weather small {
+.future-weather .min-temp {
   font-weight: 400;
 }
 .cloud-container {
