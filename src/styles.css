@@ -96,7 +96,7 @@ button i {
   border-radius: 5px;
   margin-top: 2px;
 }
-.future-weather {
+.future-weather-icon {
   width: 61px;
   background: #ffffff;
   border-radius: 10px;
@@ -105,19 +105,19 @@ button i {
   text-align: center;
   font-size: 90%;
 }
-.future-weather p {
+.ffuture-weather-icon p {
   margin-bottom: 0.5rem;
 }
 
-.future-weather img {
+.future-weather-icon img {
   width: 2.1rem;
   height: 1.9rem;
 }
 
-.future-weather .max-temp {
+.future-weather-icon .max-temp {
   font-weight: 550;
 }
-.future-weather .min-temp {
+.future-weather-icon .min-temp {
   font-weight: 400;
 }
 .cloud-container {

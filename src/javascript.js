@@ -26,7 +26,31 @@ function changeDate(timestamp) {
   return `Last updated: <br>${day} ${hour}:${minutes}`;
 }
 
-// use api to get real temperature and weather description
+//future weather box
+function displayForecast() {
+  let forecast = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row future-weather-box">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="future-weather-icon">
+      <div class="col-12">
+        <p>${day}</p>
+        <div class="col-12">
+          <img src="images/rain.png" alt="cloud with rain" />
+        </div>
+        <span class="max-temp">12°</span
+        ><span class="min-temp">5°</span>
+      </div>
+    </div>
+ `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+// use api to get real temperature and weather description and call forecast function
 function showCityTemperature(response) {
   console.log(response);
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -56,6 +80,7 @@ function showCityTemperature(response) {
     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
+  displayForecast();
 }
 
 // build url and use axios to get url then execute showCityTemperature function.
