@@ -27,7 +27,8 @@ function changeDate(timestamp) {
 }
 
 //future weather box
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecast = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row future-weather-box">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -50,6 +51,13 @@ function displayForecast() {
   forecast.innerHTML = forecastHTML;
 }
 
+function getWeatherForecast(coordinates) {
+  let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
+  let apiEndPoint = "https://api.openweathermap.org/data/2.5/onecall?";
+  let apiUrl = `${apiEndPoint}lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 // use api to get real temperature and weather description and call forecast function
 function showCityTemperature(response) {
   console.log(response);
@@ -72,7 +80,6 @@ function showCityTemperature(response) {
   document.querySelector("#current-time").innerHTML = changeDate(
     response.data.dt * 1000
   );
-
   let currentWeatherIcon = response.data.weather[0].icon;
   let weatherIcon = document.querySelector("#current-weather-icon");
   weatherIcon.setAttribute(
@@ -80,7 +87,8 @@ function showCityTemperature(response) {
     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
-  displayForecast();
+  displayForecast(response);
+  getWeatherForecast(response.data.coord);
 }
 
 // build url and use axios to get url then execute showCityTemperature function.
