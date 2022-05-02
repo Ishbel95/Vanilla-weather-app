@@ -40,14 +40,33 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row future-weather-box">`;
   forecast.forEach(function (forecastDay, index) {
     let forecastImage = forecastDay.weather[0].icon;
+    let futureWeatherIcon = "future-weather-icon";
+    let iconSource = `"http://openweathermap.org/img/wn/${forecastImage}@2x.png"`;
+
+    if (forecastImage === "01d") {
+      iconSource = `images/clearsky.svg`;
+    } else if (forecastImage === "02d") {
+      iconSource = `images/sunandcloud.png`;
+    } else if (forecastImage === "03d" || "04d") {
+      iconSource = `images/cloudy.png`;
+    } else if (forecastImage === "09d" || "10d") {
+      iconSource = `images/rain.png`;
+    } else if (forecastImage === "17d") {
+      iconSource = `images/thunder.svg`;
+    } else if (forecastImage === "13d") {
+      iconSource = `images/snow.svg`;
+    } else if (forecastImage === "50d") {
+      iconSource = `images/fog.svg`;
+    }
+
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="future-weather-icon">
+        `<div class=${futureWeatherIcon}>
       <div class="col-12">
         <p>${formatDay(forecastDay.dt)}</p>
         <div class="col-12">
-        <img src="http://openweathermap.org/img/wn/${forecastImage}@2x.png" alt="" />
+        <img id= "forecast-icon" src=${iconSource} alt="" />
         </div>
         <span class="max-temp">${Math.round(forecastDay.temp.max)}°</span
         ><span class="min-temp">${Math.round(forecastDay.temp.min)}°</span>
@@ -56,6 +75,7 @@ function displayForecast(response) {
  `;
     }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
@@ -96,7 +116,7 @@ function showCityTemperature(response) {
     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
-  weatherIcon.setAttribute("src", `src/${currentWeatherIcon}.png`);
+
   if (currentWeatherIcon === "01d") {
     weatherIcon.setAttribute("src", `images/clearsky.svg`);
   } else if (currentWeatherIcon === "02d") {
