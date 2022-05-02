@@ -23,7 +23,7 @@ function changeDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  return `Last updated:${day} ${hour}:${minutes}`;
+  return `Last updated: ${day} ${hour}:${minutes}`;
 }
 // formate day from api using array
 function formatDay(timestamp) {
@@ -58,7 +58,6 @@ function displayForecast(response) {
     } else if (forecastImage === "50d") {
       iconSource = `images/fog.svg`;
     }
-
     if (index < 5) {
       forecastHTML =
         forecastHTML +

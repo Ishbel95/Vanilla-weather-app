@@ -13,13 +13,14 @@ h1 {
 button i {
   width: 2rem;
 }
+
 .weather-app {
   border: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   padding: 15px;
   display: block;
   width: 480px;
-  height: 775px;
+  height: 730px;
   margin: 20px auto;
   border-radius: 5px;
 }
@@ -120,7 +121,7 @@ button i {
   font-weight: 400;
 }
 .cloud-container {
-  max-width: 460px;
+  max-width: 1000px;
 }
 .cloud-container i {
   font-size: 5rem;
@@ -130,10 +131,73 @@ button i {
   top: -150px;
   margin: 12px;
 }
+.cloud-row {
+  width: 900px;
+}
+.cloud-top {
+  animation: move-top 19s ease-in-out infinite alternate;
+}
+@keyframes move-top {
+  0% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(-70%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  70% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.cloud-middle {
+  animation: move-middle 18s ease-in-out infinite alternate;
+}
+@keyframes move-middle {
+  0% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(-70%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  70% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.cloud-bottom {
+  animation: move-bottom 20s ease-in-out infinite alternate;
+}
+@keyframes move-bottom {
+  0% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(-70%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  70% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
 .sun img {
   width: 18rem;
   position: relative;
-  top: -404px;
+  top: -410px;
   left: 173px;
   animation: blur 5s forwards infinite alternate;
 }
@@ -149,7 +213,6 @@ button i {
   }
 }
 .open-source-link {
-  position: relative;
-  top: -21px;
-  left: 410px;
+  display: block;
+  margin: 0 auto;
 }
