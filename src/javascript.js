@@ -39,6 +39,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row future-weather-box">`;
   forecast.forEach(function (forecastDay, index) {
+    let forecastImage = forecastDay.weather[0].icon;
     if (index < 5) {
       forecastHTML =
         forecastHTML +
@@ -46,9 +47,7 @@ function displayForecast(response) {
       <div class="col-12">
         <p>${formatDay(forecastDay.dt)}</p>
         <div class="col-12">
-        <img src="http://openweathermap.org/img/wn/${
-          forecastDay.weather[0].icon
-        }@2x.png" alt="" />
+        <img src="http://openweathermap.org/img/wn/${forecastImage}@2x.png" alt="" />
         </div>
         <span class="max-temp">${Math.round(forecastDay.temp.max)}°</span
         ><span class="min-temp">${Math.round(forecastDay.temp.min)}°</span>
@@ -97,6 +96,22 @@ function showCityTemperature(response) {
     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
+  weatherIcon.setAttribute("src", `src/${currentWeatherIcon}.png`);
+  if (currentWeatherIcon === "01d") {
+    weatherIcon.setAttribute("src", `images/clearsky.svg`);
+  } else if (currentWeatherIcon === "02d") {
+    weatherIcon.setAttribute("src", `images/suncloud.svg`);
+  } else if (currentWeatherIcon === "03d" || "04d") {
+    weatherIcon.setAttribute("src", `images/cloudy.png`);
+  } else if (currentWeatherIcon === "09d" || "10d") {
+    weatherIcon.setAttribute("src", `images/raining.png`);
+  } else if (currentWeatherIcon === "17d") {
+    weatherIcon.setAttribute("src", `images/thunder.svg`);
+  } else if (currentWeatherIcon === "13d") {
+    weatherIcon.setAttribute("src", `images/snow.svg`);
+  } else if (currentWeatherIcon === "50d") {
+    weatherIcon.setAttribute("src", `images/fog.svg`);
+  }
 
   getWeatherForecast(response.data.coord);
 }
