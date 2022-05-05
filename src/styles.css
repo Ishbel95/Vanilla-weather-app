@@ -6,8 +6,9 @@ h1 {
   font-size: 2.9rem;
   letter-spacing: 5px;
   font-weight: 600;
-  margin: 2px;
   line-height: 1;
+  position: relative;
+  left: 10px;
 }
 
 button i {
@@ -16,21 +17,33 @@ button i {
 
 .weather-app {
   border: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   padding: 15px;
   display: block;
   width: 480px;
   height: 730px;
   margin: 20px auto;
   border-radius: 5px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-size: 700%;
+  animation: bg-animation 5s infinite alternate;
 }
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .navbar {
   border-radius: 3px;
   max-width: 450px;
   margin: 10px 0;
-  border: 1px solid #a8ccfc;
-  background-color: #a8ccfc;
-  box-shadow: 2px 2px 8px rgb(129, 128, 128);
+  border: 2px solid linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
+  box-shadow: 1px 1px 8px rgb(179, 179, 179);
+  max-width: 450px;
 }
 .btn {
   margin: 2px;
@@ -45,17 +58,18 @@ button i {
 }
 
 #current-time {
-  font-size: 1.2rem;
-  padding: 5px;
+  font-size: 1rem;
+  padding: 2px;
 }
 .weather-details {
   margin: 5px;
+  position: relative;
+  left: 7px;
 }
 .current-weather {
   position: relative;
-
-  left: 300px;
-  bottom: 176px;
+  left: 320px;
+  bottom: 160px;
 }
 .current-weather span {
   font-size: 2rem;
@@ -80,14 +94,19 @@ button i {
 
 .current-weather img {
   width: 90px;
+  padding: 5px;
+  position: relative;
+  top: 7px;
 }
 .current-weather p {
-  margin: 5px;
+  position: relative;
+  top: 10px;
+  right: 8px;
 }
 .future-weather-box {
-  border: 2px solid #a8ccfc;
-  background-color: #a8ccfc;
-  box-shadow: 1px 1px 8px rgb(129, 128, 128);
+  border: 2px solid linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
+  box-shadow: 1px 1px 8px rgb(179, 179, 179);
   max-width: 450px;
   position: relative;
   left: 10px;
@@ -112,6 +131,8 @@ button i {
 .future-weather-icon img {
   width: 2.1rem;
   height: 1.9rem;
+  position: relative;
+  bottom: 5px;
 }
 
 .future-weather-icon .max-temp {
@@ -314,6 +335,7 @@ button i {
   left: 135px;
 }
 .open-source-link {
-  display: block;
-  margin: 0 auto;
+  position: fixed;
+  left: 610px;
+  bottom: 165px;
 }

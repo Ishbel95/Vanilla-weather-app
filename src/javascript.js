@@ -1,5 +1,5 @@
 // get the current days and time
-debugger;
+
 function changeDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -106,10 +106,13 @@ function showCityTemperature(response) {
   document.querySelector("#weather-description").style.textTransform =
     "capitalize";
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.querySelector("#feels-like").innerHTML =
-    response.data.main.feels_like;
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = ` ${response.data.main.humidity}`;
+  document.querySelector("#wind").innerHTML = ` ${response.data.wind.speed}`;
+  document.querySelector(
+    "#feels-like"
+  ).innerHTML = ` ${response.data.main.feels_like}`;
 
   document.querySelector("#current-time").innerHTML = changeDate(
     response.data.dt * 1000
