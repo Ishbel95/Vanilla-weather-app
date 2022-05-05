@@ -120,7 +120,7 @@ button i {
 .future-weather-icon .min-temp {
   font-weight: 400;
 }
-.cloud-container {
+.weather-container {
   max-width: 1000px;
 }
 .cloud-container i {
@@ -193,6 +193,16 @@ button i {
   100% {
     transform: translateX(-20%);
   }
+}
+
+.clear-sky {
+  text-align: center;
+  color: orange;
+  font-size: 200px;
+  position: relative;
+  top: -180px;
+  border: none;
+  text-shadow: 0 0 8px rgb(255, 255, 255);
 }
 .sun img {
   width: 18rem;

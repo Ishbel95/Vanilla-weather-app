@@ -86,6 +86,7 @@ function getWeatherForecast(coordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
+
 // use api to get real temperature and weather description and call forecast function
 function showCityTemperature(response) {
   console.log(response);
@@ -115,13 +116,80 @@ function showCityTemperature(response) {
     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
-
+  let weatherAnimation = document.querySelector("#weather-animation");
+  let weatherAnimationHTML = `<div class="weather-container">`;
   if (currentWeatherIcon === "01d") {
     weatherIcon.setAttribute("src", `images/clearsky.svg`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class="clear-sky">
+      <i class="fa-solid fa-sun"></i>
+        </div>`;
   } else if (currentWeatherIcon === "02d") {
     weatherIcon.setAttribute("src", `images/suncloud.svg`);
   } else if (currentWeatherIcon === "03d" || "04d") {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class = "cloud-container">
+      <div class="row cloud-row">
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+      </div>
+      <div class="row cloud-row">
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+      </div>
+      <div class="row cloud-row">
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+      </div>
+      </div>`;
   } else if (currentWeatherIcon === "09d" || "10d") {
     weatherIcon.setAttribute("src", `images/raining.png`);
   } else if (currentWeatherIcon === "17d") {
@@ -131,7 +199,8 @@ function showCityTemperature(response) {
   } else if (currentWeatherIcon === "50d") {
     weatherIcon.setAttribute("src", `images/fog.svg`);
   }
-
+  weatherAnimationHTML = weatherAnimationHTML + `</div>`;
+  weatherAnimation.innerHTML = weatherAnimationHTML;
   getWeatherForecast(response.data.coord);
 }
 
