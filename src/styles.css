@@ -91,7 +91,7 @@ button i {
   max-width: 450px;
   position: relative;
   left: 10px;
-  top: -165px;
+  top: -140px;
   padding: 5px;
   border-radius: 5px;
   margin-top: 2px;
@@ -122,6 +122,8 @@ button i {
 }
 .weather-container {
   max-width: 1000px;
+  position: relative;
+  top: 12px;
 }
 .cloud-container i {
   font-size: 5rem;
@@ -204,23 +206,25 @@ button i {
   border: none;
   text-shadow: 0 0 8px rgb(255, 255, 255);
 }
-.sun img {
-  width: 18rem;
+
+.sun-cloud-sun {
+  color: rgb(255, 238, 0);
+  text-shadow: 0 0 8px rgb(255, 238, 0);
+  font-size: 12rem;
+  font-weight: 100;
   position: relative;
-  top: -410px;
-  left: 173px;
-  animation: blur 5s forwards infinite alternate;
+  top: -87px;
+  left: 75px;
 }
-@keyframes blur {
-  10% {
-    filter: drop-shadow(-5px -5px 8px rgb(241, 216, 134));
-  }
-  50% {
-    filter: drop-shadow(-5px -5px 8px rgb(236, 204, 97));
-  }
-  100% {
-    filter: drop-shadow(-5px -5px 8px rgb(243, 207, 1));
-  }
+.sun-cloud-cloud {
+  font-size: 9rem;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  position: relative;
+  top: -70px;
+}
+.rain-container {
+  color: red;
 }
 .open-source-link {
   display: block;

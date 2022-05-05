@@ -1,4 +1,5 @@
 // get the current days and time
+debugger;
 function changeDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -41,15 +42,19 @@ function displayForecast(response) {
   forecast.forEach(function (forecastDay, index) {
     let forecastImage = forecastDay.weather[0].icon;
     let futureWeatherIcon = "future-weather-icon";
-    let iconSource = `"http://openweathermap.org/img/wn/${forecastImage}@2x.png"`;
-
+    let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
+    console.log(forecastImage);
     if (forecastImage === "01d") {
       iconSource = `images/clearsky.svg`;
     } else if (forecastImage === "02d") {
       iconSource = `images/sunandcloud.png`;
-    } else if (forecastImage === "03d" || "04d") {
+    } else if (forecastImage === "03d") {
       iconSource = `images/cloudy.png`;
-    } else if (forecastImage === "09d" || "10d") {
+    } else if (forecastImage === "04d") {
+      iconSource = `images/cloudy.png`;
+    } else if (forecastImage === "09d") {
+      iconSource = `images/rain.png`;
+    } else if (forecastImage === "10d") {
       iconSource = `images/rain.png`;
     } else if (forecastImage === "17d") {
       iconSource = `images/thunder.svg`;
@@ -126,13 +131,19 @@ function showCityTemperature(response) {
       <i class="fa-solid fa-sun"></i>
         </div>`;
   } else if (currentWeatherIcon === "02d") {
-    weatherIcon.setAttribute("src", `images/suncloud.svg`);
-  } else if (currentWeatherIcon === "03d" || "04d") {
+    weatherIcon.setAttribute("src", `images/sunandcloud.png`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class="sun-cloud">
+      <i class="fa-regular fa-sun sun-cloud-sun"></i>
+      <i class="fa-solid fa-cloud sun-cloud-cloud"></i>
+        </div>`;
+  } else if (currentWeatherIcon === "03d") {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "cloud-container">
-      <div class="row cloud-row">
+       <div class="row cloud-row">
         <div class="col cloud-top">
           <i class="fa-solid fa-cloud"></i>
         </div>
@@ -188,10 +199,75 @@ function showCityTemperature(response) {
         <div class="col cloud-bottom">
           <i class="fa-solid fa-cloud"></i>
         </div>
-      </div>
+       </div>
       </div>`;
-  } else if (currentWeatherIcon === "09d" || "10d") {
-    weatherIcon.setAttribute("src", `images/raining.png`);
+  } else if (currentWeatherIcon === "04d") {
+    weatherIcon.setAttribute("src", `images/cloudy.png`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class = "cloud-container">
+       <div class="row cloud-row">
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-top">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+      </div>
+      <div class="row cloud-row">
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-middle">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+      </div>
+      <div class="row cloud-row">
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="col cloud-bottom">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+       </div>
+      </div>`;
+  } else if (currentWeatherIcon === "09d") {
+    weatherIcon.setAttribute("src", `images/rain.png`);
+  } else if (currentWeatherIcon === "10d") {
+    weatherIcon.setAttribute("src", `images/rain.png`);
   } else if (currentWeatherIcon === "17d") {
     weatherIcon.setAttribute("src", `images/thunder.svg`);
   } else if (currentWeatherIcon === "13d") {
