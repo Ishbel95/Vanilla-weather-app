@@ -43,7 +43,6 @@ function displayForecast(response) {
     let forecastImage = forecastDay.weather[0].icon;
     let futureWeatherIcon = "future-weather-icon";
     let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
-    console.log(forecastImage);
     if (forecastImage === "01d") {
       iconSource = `images/clearsky.svg`;
     } else if (forecastImage === "02d") {
@@ -126,354 +125,354 @@ function showCityTemperature(response) {
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
   let weatherAnimation = document.querySelector("#weather-animation");
   let weatherAnimationHTML = `<div class="weather-container">`;
-  if (currentWeatherIcon === "01d") {
+  if (currentWeatherIcon === "01n") {
     weatherIcon.setAttribute("src", `images/clearsky.svg`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="clear-sky">
-      <i class="fa-solid fa-sun"></i>
-        </div>`;
-  } else if (currentWeatherIcon === "02d") {
+      <img src=images/clearsky.svg class= "clear-sky">
+          </div>`;
+  } else if (currentWeatherIcon === "02n") {
     weatherIcon.setAttribute("src", `images/sunandcloud.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="sun-cloud">
-      <i class="fa-regular fa-sun sun-cloud-sun"></i>
-      <i class="fa-solid fa-cloud sun-cloud-cloud"></i>
+        <img src=images/clearsky.svg class= "sun-cloud-sun">
+        <i class="fa-solid fa-cloud sun-cloud-cloud"></i>
+          </div>`;
+  } else if (currentWeatherIcon === "03n") {
+    weatherIcon.setAttribute("src", `images/cloudy.png`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class = "cloud-container">
+         <div class="row cloud-row">
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+        </div>
+        <div class="row cloud-row">
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+        </div>
+        <div class="row cloud-row">
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+         </div>
         </div>`;
-  } else if (currentWeatherIcon === "03d") {
+  } else if (currentWeatherIcon === "04n") {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "cloud-container">
-       <div class="row cloud-row">
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
+         <div class="row cloud-row">
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-top">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
         </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
+        <div class="row cloud-row">
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-middle">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
         </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-      </div>
-      <div class="row cloud-row">
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-      </div>
-      <div class="row cloud-row">
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-       </div>
-      </div>`;
-  } else if (currentWeatherIcon === "04d") {
-    weatherIcon.setAttribute("src", `images/cloudy.png`);
-    weatherAnimationHTML =
-      weatherAnimationHTML +
-      `<div class = "cloud-container">
-       <div class="row cloud-row">
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-top">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-      </div>
-      <div class="row cloud-row">
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-middle">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-      </div>
-      <div class="row cloud-row">
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-        <div class="col cloud-bottom">
-          <i class="fa-solid fa-cloud"></i>
-        </div>
-       </div>
-      </div>`;
-  } else if (currentWeatherIcon === "09d") {
+        <div class="row cloud-row">
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="col cloud-bottom">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+         </div>
+        </div>`;
+  } else if (currentWeatherIcon === "09n") {
     weatherIcon.setAttribute("src", `images/rain.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "rain-container">
+          <div class="row rain-row">
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+         </div>
+       <div class="row rain-row">
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+        </div>
         <div class="row rain-row">
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
          </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-       </div>
-     <div class="row rain-row">
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-      </div>
-      <div class="row rain-row">
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-       </div>
-      </div>`;
-  } else if (currentWeatherIcon === "10d") {
+        </div>`;
+  } else if (currentWeatherIcon === "10n") {
     weatherIcon.setAttribute("src", `images/rain.png`);
     weatherIcon.setAttribute("src", `images/rain.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "rain-container">
+          <div class="row rain-row">
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+           <div class="col rain-top">
+            <i class="fa-solid fa-droplet"></i>
+           </div>
+         </div>
+       <div class="row rain-row">
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-middle">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+        </div>
         <div class="row rain-row">
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="col rain-bottom">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
          </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-         <div class="col rain-top">
-          <i class="fa-solid fa-droplet"></i>
-         </div>
-       </div>
-     <div class="row rain-row">
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-middle">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-      </div>
-      <div class="row rain-row">
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-        <div class="col rain-bottom">
-          <i class="fa-solid fa-droplet"></i>
-        </div>
-       </div>
-      </div>`;
-  } else if (currentWeatherIcon === "11d") {
+        </div>`;
+  } else if (currentWeatherIcon === "11n") {
     weatherIcon.setAttribute("src", `images/thunder.svg`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="thunder">
-      <i class="fa-solid fa-cloud thunder-cloud"></i>
-      <i class="fa-solid fa-bolt-lightning thunder-bolt"></i>
-        </div>`;
-  } else if (currentWeatherIcon === "13d") {
+        <i class="fa-solid fa-cloud thunder-cloud"></i>
+        <i class="fa-solid fa-bolt-lightning thunder-bolt"></i>
+          </div>`;
+  } else if (currentWeatherIcon === "13n") {
     weatherIcon.setAttribute("src", `images/snow.svg`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "snow-container">
+          <div class="row snow-row">
+           <div class="col snow-top">
+             <i class="fa-solid fa-snowflake"></i>
+          </div>
+           <div class="col snow-top">
+             <i class="fa-solid fa-snowflake"></i>
+           </div>
+           <div class="col snow-top">
+             <i class="fa-solid fa-snowflake"></i>
+           </div>
+           <div class="col snow-top">
+             <i class="fa-solid fa-snowflake"></i>
+           </div>
+           <div class="col snow-top">
+             <i class="fa-solid fa-snowflake"></i>
+           </div>
+         </div>
+       <div class="row snow-row">
+          <div class="col snow-middle">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-middle">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-middle">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-middle">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-middle">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+        </div>
         <div class="row snow-row">
-         <div class="col snow-top">
-           <i class="fa-solid fa-snowflake"></i>
-        </div>
-         <div class="col snow-top">
-           <i class="fa-solid fa-snowflake"></i>
+          <div class="col snow-bottom">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-bottom">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-bottom">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-bottom">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="col snow-bottom">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
          </div>
-         <div class="col snow-top">
-           <i class="fa-solid fa-snowflake"></i>
-         </div>
-         <div class="col snow-top">
-           <i class="fa-solid fa-snowflake"></i>
-         </div>
-         <div class="col snow-top">
-           <i class="fa-solid fa-snowflake"></i>
-         </div>
-       </div>
-     <div class="row snow-row">
-        <div class="col snow-middle">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-middle">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-middle">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-middle">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-middle">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-      </div>
-      <div class="row snow-row">
-        <div class="col snow-bottom">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-bottom">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-bottom">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-bottom">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-        <div class="col snow-bottom">
-          <i class="fa-solid fa-snowflake"></i>
-        </div>
-       </div>
-      </div>`;
-  } else if (currentWeatherIcon === "50d") {
+        </div>`;
+  } else if (currentWeatherIcon === "50n") {
     weatherIcon.setAttribute("src", `images/fog.svg`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="fog">
-      <i class="fa-solid fa-minus fog-top"></i>
-      <i class="fa-solid fa-minus fog-middle"></i>
-      <i class="fa-solid fa-minus fog-bottom"></i>
-        </div>`;
+        <i class="fa-solid fa-minus fog-top"></i>
+        <i class="fa-solid fa-minus fog-middle"></i>
+        <i class="fa-solid fa-minus fog-bottom"></i>
+          </div>`;
   }
   weatherAnimationHTML = weatherAnimationHTML + `</div>`;
   weatherAnimation.innerHTML = weatherAnimationHTML;
