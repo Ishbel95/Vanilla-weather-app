@@ -266,14 +266,211 @@ function showCityTemperature(response) {
       </div>`;
   } else if (currentWeatherIcon === "09d") {
     weatherIcon.setAttribute("src", `images/rain.png`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class = "rain-container">
+        <div class="row rain-row">
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+       </div>
+     <div class="row rain-row">
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+      </div>
+      <div class="row rain-row">
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+       </div>
+      </div>`;
   } else if (currentWeatherIcon === "10d") {
     weatherIcon.setAttribute("src", `images/rain.png`);
-  } else if (currentWeatherIcon === "17d") {
+    weatherIcon.setAttribute("src", `images/rain.png`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class = "rain-container">
+        <div class="row rain-row">
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+         <div class="col rain-top">
+          <i class="fa-solid fa-droplet"></i>
+         </div>
+       </div>
+     <div class="row rain-row">
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-middle">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+      </div>
+      <div class="row rain-row">
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <div class="col rain-bottom">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+       </div>
+      </div>`;
+  } else if (currentWeatherIcon === "11d") {
     weatherIcon.setAttribute("src", `images/thunder.svg`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class="thunder">
+      <i class="fa-solid fa-cloud thunder-cloud"></i>
+      <i class="fa-solid fa-bolt-lightning thunder-bolt"></i>
+        </div>`;
   } else if (currentWeatherIcon === "13d") {
     weatherIcon.setAttribute("src", `images/snow.svg`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class = "snow-container">
+        <div class="row snow-row">
+         <div class="col snow-top">
+           <i class="fa-solid fa-snowflake"></i>
+        </div>
+         <div class="col snow-top">
+           <i class="fa-solid fa-snowflake"></i>
+         </div>
+         <div class="col snow-top">
+           <i class="fa-solid fa-snowflake"></i>
+         </div>
+         <div class="col snow-top">
+           <i class="fa-solid fa-snowflake"></i>
+         </div>
+         <div class="col snow-top">
+           <i class="fa-solid fa-snowflake"></i>
+         </div>
+       </div>
+     <div class="row snow-row">
+        <div class="col snow-middle">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-middle">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-middle">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-middle">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-middle">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+      </div>
+      <div class="row snow-row">
+        <div class="col snow-bottom">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-bottom">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-bottom">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-bottom">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <div class="col snow-bottom">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+       </div>
+      </div>`;
   } else if (currentWeatherIcon === "50d") {
     weatherIcon.setAttribute("src", `images/fog.svg`);
+    weatherAnimationHTML =
+      weatherAnimationHTML +
+      `<div class="fog">
+      <i class="fa-solid fa-minus fog-top"></i>
+      <i class="fa-solid fa-minus fog-middle"></i>
+      <i class="fa-solid fa-minus fog-bottom"></i>
+        </div>`;
   }
   weatherAnimationHTML = weatherAnimationHTML + `</div>`;
   weatherAnimation.innerHTML = weatherAnimationHTML;

@@ -224,7 +224,94 @@ button i {
   top: -70px;
 }
 .rain-container {
-  color: red;
+  font-size: 3rem;
+}
+
+.rain-container .rain-top {
+  color: #0cabc6;
+  position: relative;
+  top: -150px;
+  left: 3px;
+}
+
+.rain-container .rain-middle {
+  color: #0ebbda;
+  position: relative;
+  top: -210px;
+  left: 14px;
+}
+.rain-container .rain-bottom {
+  color: #10dbff;
+  position: relative;
+  top: -290px;
+  left: 18px;
+}
+
+.thunder-cloud {
+  font-size: 9rem;
+  color: rgb(128, 128, 128);
+  text-shadow: 0 0 15px rgb(151, 150, 150);
+  position: relative;
+  top: -130px;
+  left: 130px;
+}
+.thunder-bolt {
+  font-size: 7rem;
+  color: #fff;
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -70px;
+  left: 8px;
+}
+
+.snow-container {
+  font-size: 4rem;
+}
+.snow-container .snow-top {
+  color: rgb(228, 224, 224);
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -140px;
+  left: 2px;
+}
+.snow-container .snow-middle {
+  color: rgb(230, 230, 230);
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -220px;
+  left: 12px;
+}
+.snow-container .snow-bottom {
+  color: rgb(240, 240, 240);
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -320px;
+  left: 6px;
+}
+
+.fog {
+  font-size: 12rem;
+}
+.fog .fog-top {
+  color: rgb(204, 204, 204);
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -230px;
+  left: 140px;
+}
+.fog .fog-middle {
+  color: rgb(228, 224, 224);
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -170px;
+  right: 50px;
+}
+.fog .fog-bottom {
+  color: rgb(233, 232, 232);
+  text-shadow: 0 0 20px #fff;
+  position: relative;
+  top: -400px;
+  left: 135px;
 }
 .open-source-link {
   display: block;
