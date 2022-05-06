@@ -132,7 +132,7 @@ function showCityTemperature(response) {
       `<div class = "clear-sky-container"
       <div class="row clear-sky">
       <div class = col-7>
-      <img src=images/clearsky.svg class= "clear-sky">
+      <img src=images/sun.png class= "clear-sky">
       </div>
           </div>
           </div>`;
@@ -142,10 +142,15 @@ function showCityTemperature(response) {
       weatherAnimationHTML +
       `<div class="sun-cloud">
       <i class="fa-solid fa-cloud sun-cloud-cloud-top"></i>
-        <img src=images/clearsky.svg class= "sun-cloud-sun">
+        <img src=images/sun.png class= "sun-cloud-sun">
         <i class="fa-solid fa-cloud sun-cloud-cloud-bottom"></i>
           </div>`;
-  } else if (currentWeatherIcon === "03d") {
+  } else if (
+    currentWeatherIcon === "03d" ||
+    currentWeatherIcon === "03n" ||
+    currentWeatherIcon === "04d" ||
+    currentWeatherIcon === "04n"
+  ) {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
@@ -208,7 +213,7 @@ function showCityTemperature(response) {
           </div>
          </div>
         </div>`;
-  } else if (currentWeatherIcon === "13d") {
+  } else if (currentWeatherIcon === "04d" || currentWeatherIcon === "04n") {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
@@ -317,7 +322,7 @@ function showCityTemperature(response) {
         <i class="fa-solid fa-cloud thunder-cloud-bottom"></i>
         <i class="fa-solid fa-bolt-lightning thunder-bolt"></i>
           </div>`;
-  } else if (currentWeatherIcon === "04d") {
+  } else if (currentWeatherIcon === "13d") {
     weatherIcon.setAttribute("src", `images/snowing.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
@@ -328,12 +333,6 @@ function showCityTemperature(response) {
           <i class="fa-solid fa-snowflake snow-one"></i>
           <i class="fa-solid fa-snowflake snow-two"></i>
           <i class="fa-solid fa-snowflake snow-three"></i>
-          <i class="fa-solid fa-snowflake snow-four"></i>
-          <i class="fa-solid fa-snowflake snow-five"></i>
-          <i class="fa-solid fa-snowflake snow-six"></i>
-          <i class="fa-solid fa-snowflake snow-seven"></i>
-          <i class="fa-solid fa-snowflake snow-eight"></i>
-          <i class="fa-solid fa-snowflake snow-nine"></i>
           </div>`;
   } else if (currentWeatherIcon === "50d") {
     weatherIcon.setAttribute("src", `images/fog.png`);
