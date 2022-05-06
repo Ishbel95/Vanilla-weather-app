@@ -44,7 +44,7 @@ function displayForecast(response) {
     let futureWeatherIcon = "future-weather-icon";
     let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
     if (forecastImage === "01d") {
-      iconSource = `images/clearsky.svg`;
+      iconSource = `images/sun.png`;
     } else if (forecastImage === "02d") {
       iconSource = `images/sunandcloud.png`;
     } else if (forecastImage === "03d") {
@@ -52,15 +52,15 @@ function displayForecast(response) {
     } else if (forecastImage === "04d") {
       iconSource = `images/cloudy.png`;
     } else if (forecastImage === "09d") {
-      iconSource = `images/rain.png`;
+      iconSource = `images/raining.png`;
     } else if (forecastImage === "10d") {
-      iconSource = `images/rain.png`;
+      iconSource = `images/raining.png`;
     } else if (forecastImage === "17d") {
-      iconSource = `images/thunder.svg`;
+      iconSource = `images/thunder.png`;
     } else if (forecastImage === "13d") {
-      iconSource = `images/snow.svg`;
+      iconSource = `images/snowing.png`;
     } else if (forecastImage === "50d") {
-      iconSource = `images/fog.svg`;
+      iconSource = `images/fog.png`;
     }
     if (index < 5) {
       forecastHTML =
@@ -125,14 +125,18 @@ function showCityTemperature(response) {
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
   let weatherAnimation = document.querySelector("#weather-animation");
   let weatherAnimationHTML = `<div class="weather-container">`;
-  if (currentWeatherIcon === "01n") {
-    weatherIcon.setAttribute("src", `images/clearsky.svg`);
+  if (currentWeatherIcon === "01d") {
+    weatherIcon.setAttribute("src", `images/sun.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
-      `<div class="clear-sky">
+      `<div class = "clear-sky-container"
+      <div class="row clear-sky">
+      <div class = col-7>
       <img src=images/clearsky.svg class= "clear-sky">
+      </div>
+          </div>
           </div>`;
-  } else if (currentWeatherIcon === "02n") {
+  } else if (currentWeatherIcon === "02d") {
     weatherIcon.setAttribute("src", `images/sunandcloud.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
@@ -140,7 +144,7 @@ function showCityTemperature(response) {
         <img src=images/clearsky.svg class= "sun-cloud-sun">
         <i class="fa-solid fa-cloud sun-cloud-cloud"></i>
           </div>`;
-  } else if (currentWeatherIcon === "03n") {
+  } else if (currentWeatherIcon === "03d") {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
@@ -203,7 +207,7 @@ function showCityTemperature(response) {
           </div>
          </div>
         </div>`;
-  } else if (currentWeatherIcon === "04n") {
+  } else if (currentWeatherIcon === "04d") {
     weatherIcon.setAttribute("src", `images/cloudy.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
@@ -266,8 +270,8 @@ function showCityTemperature(response) {
           </div>
          </div>
         </div>`;
-  } else if (currentWeatherIcon === "09n") {
-    weatherIcon.setAttribute("src", `images/rain.png`);
+  } else if (currentWeatherIcon === "09d") {
+    weatherIcon.setAttribute("src", `images/raining.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "rain-container">
@@ -332,9 +336,8 @@ function showCityTemperature(response) {
           </div>
          </div>
         </div>`;
-  } else if (currentWeatherIcon === "10n") {
-    weatherIcon.setAttribute("src", `images/rain.png`);
-    weatherIcon.setAttribute("src", `images/rain.png`);
+  } else if (currentWeatherIcon === "10d") {
+    weatherIcon.setAttribute("src", `images/raining.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "rain-container">
@@ -399,16 +402,16 @@ function showCityTemperature(response) {
           </div>
          </div>
         </div>`;
-  } else if (currentWeatherIcon === "11n") {
-    weatherIcon.setAttribute("src", `images/thunder.svg`);
+  } else if (currentWeatherIcon === "11d") {
+    weatherIcon.setAttribute("src", `images/thunder.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="thunder">
         <i class="fa-solid fa-cloud thunder-cloud"></i>
         <i class="fa-solid fa-bolt-lightning thunder-bolt"></i>
           </div>`;
-  } else if (currentWeatherIcon === "13n") {
-    weatherIcon.setAttribute("src", `images/snow.svg`);
+  } else if (currentWeatherIcon === "13d") {
+    weatherIcon.setAttribute("src", `images/snowing.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "snow-container">
@@ -464,8 +467,8 @@ function showCityTemperature(response) {
           </div>
          </div>
         </div>`;
-  } else if (currentWeatherIcon === "50n") {
-    weatherIcon.setAttribute("src", `images/fog.svg`);
+  } else if (currentWeatherIcon === "50d") {
+    weatherIcon.setAttribute("src", `images/fog.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="fog">

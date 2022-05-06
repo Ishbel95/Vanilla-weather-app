@@ -291,18 +291,17 @@ button i {
 .clear-sky {
   width: 18rem;
   position: relative;
-  top: -80px;
-  left: 40px;
+  top: -160px;
+  left: 80px;
   animation: rotate 25s infinite ease-in-out;
 }
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  50% {
-  }
-  100% {
-    transform: rotate(700deg);
+
+  to {
+    transform: rotate(200deg);
   }
 }
 .sun-cloud-sun {
