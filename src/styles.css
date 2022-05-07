@@ -638,7 +638,7 @@ button i {
   }
 }
 .open-source-link {
-  position: fixed;
-  left: 610px;
-  bottom: 80px;
+  position: relative;
+  left: 5px;
+  bottom: 178px;
 }

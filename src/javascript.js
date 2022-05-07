@@ -303,6 +303,7 @@ function showTemp(response) {
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#feels-like").innerHTML =
     response.data.main.feels_like;
+  showCityTemperature(response);
 }
 
 // get url using axios and current coordinates all from api
@@ -343,9 +344,10 @@ function showCelsius(event) {
 
 let celsiusTemperature = null;
 //on load search for london
-selectedCity("london");
-//
 
+//
+selectedCity("london");
+myPosition(event);
 // select fahrenheit button and execute function
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
