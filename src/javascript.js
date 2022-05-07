@@ -44,7 +44,7 @@ function displayForecast(response) {
     let futureWeatherIcon = "future-weather-icon";
     let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
     if (forecastImage === "01d") {
-      iconSource = `images/sun.png`;
+      iconSource = `images/clearsky.png`;
     } else if (forecastImage === "02d") {
       iconSource = `images/sunandcloud.png`;
     } else if (forecastImage === "03d") {
@@ -101,10 +101,10 @@ function showCityTemperature(response) {
     response.data.main.temp
   );
   console.log(celsiusTemperature);
-  if (celsiusTemperature >= 19) {
+  if (celsiusTemperature >= 30) {
     let appHighTemp = document.querySelector("#app-temp-high");
     appHighTemp.classList.replace("weather-app", "weather-app-high-temp");
-  } else if (celsiusTemperature < 19) {
+  } else if (celsiusTemperature < 30) {
     let appHighTemp = document.querySelector("#app-temp-high");
     appHighTemp.classList.replace("weather-app-high-temp", "weather-app");
   }
@@ -134,7 +134,7 @@ function showCityTemperature(response) {
   let weatherAnimation = document.querySelector("#weather-animation");
   let weatherAnimationHTML = `<div class="weather-container">`;
   if (currentWeatherIcon === "01d" || currentWeatherIcon === "01n") {
-    weatherIcon.setAttribute("src", `images/sun.png`);
+    weatherIcon.setAttribute("src", `images/clearsky.png`);
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class = "clear-sky-container"

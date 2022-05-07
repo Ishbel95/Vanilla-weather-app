@@ -100,7 +100,12 @@ button i {
 .current-weather {
   position: relative;
   left: 320px;
-  bottom: 150px;
+  bottom: 170px;
+}
+.current-weather-temperature {
+  position: relative;
+  top: 10px;
+  left: 10px;
 }
 .current-weather span {
   font-size: 2rem;
@@ -109,25 +114,26 @@ button i {
 .current-weather #temp-change {
   font-weight: 200;
   line-height: 0.1;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
 }
 #celsius,
 #fahrenheit {
+  color: rgb(45, 44, 44);
   font-size: 1rem;
   text-decoration: none;
 }
 
 .current-weather .active {
-  color: rgb(45, 44, 44);
+  color: rgb(31, 30, 30);
   cursor: default;
   text-decoration: none;
 }
 
 .current-weather img {
-  width: 100px;
-  padding: 5px;
+  width: 170px;
   position: relative;
   top: 7px;
+  right: 30px;
 }
 .current-weather p {
   font-size: 1rem;
@@ -141,7 +147,7 @@ button i {
   max-width: 450px;
   position: relative;
   left: 10px;
-  top: -150px;
+  top: -170px;
   padding: 5px;
   border-radius: 5px;
   margin-top: 2px;
@@ -149,6 +155,7 @@ button i {
 .future-weather-icon {
   width: 61px;
   background: #ffffff;
+
   border-radius: 10px;
   margin: 0.2rem 0.8rem;
   padding: 8px 0;
@@ -160,7 +167,7 @@ button i {
 }
 
 .future-weather-icon img {
-  width: 2.1rem;
+  width: 3rem;
   height: 1.9rem;
   position: relative;
   bottom: 5px;
