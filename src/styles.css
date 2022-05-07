@@ -568,26 +568,74 @@ button i {
 .fog {
   font-size: 12rem;
 }
-.fog .fog-top {
-  color: rgb(204, 204, 204);
-  text-shadow: 0 0 20px #fff;
+.cloud-fog {
   position: relative;
-  top: -230px;
-  left: 140px;
+  bottom: 170px;
+  left: 100px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px #fff;
+  animation: color-change 5s infinite alternate;
+}
+@keyframes color-change {
+  0% {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 8px #fff;
+  }
+  100% {
+    color: rgb(184, 184, 184);
+    text-shadow: 0 0 8px #fff;
+  }
+}
+.fog .fog-top {
+  position: relative;
+  bottom: 480px;
+  left: 120px;
+  animation: mist-move-top 5s infinite alternate;
+}
+@keyframes mist-move-top {
+  0% {
+    color: rgb(204, 204, 204);
+    text-shadow: 0 0 10px #fff;
+  }
+  100% {
+    transform: translateX(-20px);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px #fff;
+  }
 }
 .fog .fog-middle {
-  color: rgb(228, 224, 224);
-  text-shadow: 0 0 20px #fff;
   position: relative;
-  top: -170px;
+  bottom: 430px;
   right: 50px;
+  animation: mist-move-middle 5s infinite alternate;
+}
+@keyframes mist-move-middle {
+  0% {
+    color: rgb(204, 204, 204);
+    text-shadow: 0 0 10px #fff;
+  }
+  100% {
+    transform: translateX(20px);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px #fff;
+  }
 }
 .fog .fog-bottom {
-  color: rgb(233, 232, 232);
-  text-shadow: 0 0 20px #fff;
   position: relative;
-  top: -400px;
+  bottom: 660px;
   left: 135px;
+  animation: mist-move-bottom 5s infinite alternate;
+}
+@keyframes mist-move-bottom {
+  0% {
+    color: rgb(204, 204, 204);
+    text-shadow: 0 0 10px #fff;
+  }
+  100% {
+    transform: translateX(-20px);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px #fff;
+  }
 }
 .open-source-link {
   position: fixed;

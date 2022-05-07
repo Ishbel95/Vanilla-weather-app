@@ -263,6 +263,7 @@ function showCityTemperature(response) {
     weatherAnimationHTML =
       weatherAnimationHTML +
       `<div class="fog">
+        <i class="fa-solid fa-cloud cloud-fog"></i>
         <i class="fa-solid fa-minus fog-top"></i>
         <i class="fa-solid fa-minus fog-middle"></i>
         <i class="fa-solid fa-minus fog-bottom"></i>
@@ -342,7 +343,8 @@ function showCelsius(event) {
 
 let celsiusTemperature = null;
 //on load search for london
-selectedCity("London");
+selectedCity("london");
+//
 
 // select fahrenheit button and execute function
 let fahrenheitLink = document.querySelector("#fahrenheit");
