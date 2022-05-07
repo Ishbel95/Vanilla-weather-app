@@ -100,7 +100,6 @@ function showCityTemperature(response) {
   document.querySelector("#temp-change").innerHTML = Math.round(
     response.data.main.temp
   );
-
   console.log(celsiusTemperature);
   if (celsiusTemperature >= 19) {
     let appHighTemp = document.querySelector("#app-temp-high");
