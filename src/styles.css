@@ -170,6 +170,7 @@ button i {
 #weather-animation {
   position: relative;
   top: -10px;
+  z-index: 8;
 }
 .weather-container {
   max-width: 1000px;
@@ -612,6 +613,8 @@ button i {
 .open-source-link {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 9;
 }
 .open-source-link a {
   text-decoration: none;
