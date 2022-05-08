@@ -122,7 +122,7 @@ function showCityTemperature(response) {
     response.data.main.feels_like
   )}`;
 
-  document.querySelector("#current-time").innerHTML = changeDate(
+  document.querySelector("#last-updated").innerHTML = changeDate(
     response.data.dt * 1000
   );
   let currentWeatherIcon = response.data.weather[0].icon;
