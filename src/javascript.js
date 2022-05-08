@@ -26,7 +26,8 @@ function changeDate(timestamp) {
 
   return `Last updated: ${day} ${hour}:${minutes}`;
 }
-// formate day from api using array
+
+// formate last updated from api using array
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -34,7 +35,7 @@ function formatDay(timestamp) {
   return day;
 }
 
-//future weather box
+//future weather box, forecast information from api
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
@@ -43,23 +44,29 @@ function displayForecast(response) {
     let forecastImage = forecastDay.weather[0].icon;
     let futureWeatherIcon = "future-weather-icon";
     let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
-    if (forecastImage === "01d") {
+    if (forecastImage === "01d" || forecastImage === "01n") {
       iconSource = `images/clearsky.png`;
-    } else if (forecastImage === "02d") {
+    } else if (forecastImage === "02d" || forecastImage === "02n") {
       iconSource = `images/sunandcloud.png`;
-    } else if (forecastImage === "03d") {
+    } else if (
+      forecastImage === "03d" ||
+      forecastImage === "03n" ||
+      forecastImage === "04d" ||
+      forecastImage === "04n"
+    ) {
       iconSource = `images/cloudy.png`;
-    } else if (forecastImage === "04d") {
-      iconSource = `images/cloudy.png`;
-    } else if (forecastImage === "09d") {
+    } else if (
+      forecastImage === "09d" ||
+      forecastImage === "09n" ||
+      forecastImage === "10d" ||
+      forecastImage === "10n"
+    ) {
       iconSource = `images/raining.png`;
-    } else if (forecastImage === "10d") {
-      iconSource = `images/raining.png`;
-    } else if (forecastImage === "17d") {
+    } else if (forecastImage === "11d" || forecastImage === "11n") {
       iconSource = `images/thunder.png`;
-    } else if (forecastImage === "13d") {
+    } else if (forecastImage === "13d" || forecastImage === "13n") {
       iconSource = `images/snowing.png`;
-    } else if (forecastImage === "50d") {
+    } else if (forecastImage === "50d" || forecastImage === "50n") {
       iconSource = `images/fog.png`;
     }
     if (index < 5) {
@@ -87,20 +94,19 @@ function getWeatherForecast(coordinates) {
   let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/onecall?";
   let apiUrl = `${apiEndPoint}lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
-// use api to get real temperature and weather description and call forecast function
+// use api to get real temperature, weather description and call forecast function
+//change api images to my chosen images
+//change bottom animation depending on icon from api
 function showCityTemperature(response) {
-  console.log(response);
   celsiusTemperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temp-change");
   temperatureElement.innerHTML = celsiusTemperature;
   document.querySelector("#temp-change").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#weather-description").style.textTransform =
@@ -292,7 +298,6 @@ function weatherSearch(event) {
 
 //change the location, temperature and weather description to current location using info from api.
 function showTemp(response) {
-  console.log(response);
   document.querySelector("#temp-change").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -308,7 +313,6 @@ function showTemp(response) {
 
 // get url using axios and current coordinates all from api
 function getPosition(position) {
-  console.log(position);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
@@ -318,7 +322,7 @@ function getPosition(position) {
   axios.get(url).then(showTemp);
 }
 
-//get current position function
+//get geolcation
 function myPosition(event) {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
@@ -343,11 +347,7 @@ function showCelsius(event) {
 }
 
 let celsiusTemperature = null;
-//on load search for london
 
-//
-selectedCity("london");
-myPosition(event);
 // select fahrenheit button and execute function
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
@@ -363,3 +363,7 @@ celsiusLink.addEventListener("click", showCelsius);
 //select button and execute myPosition function
 let geoButton = document.querySelector("#geo-location");
 geoButton.addEventListener("click", myPosition);
+
+//on load search for london and ask for geolcation
+selectedCity("london");
+myPosition();

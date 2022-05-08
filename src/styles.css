@@ -611,11 +611,8 @@ button i {
 }
 .open-source-link {
   text-decoration: none;
-  position: relative;
-  top: -420px;
-  right: -470px;
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
+  margin: 0 auto;
+  text-align: center;
 }
 .open-source-link a {
   text-decoration: none;
