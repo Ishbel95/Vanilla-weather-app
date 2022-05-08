@@ -610,9 +610,8 @@ button i {
   }
 }
 .open-source-link {
-  text-decoration: none;
-  margin: 0 auto;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .open-source-link a {
   text-decoration: none;
