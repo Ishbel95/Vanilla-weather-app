@@ -71,7 +71,6 @@ button i {
 
 #current-time {
   font-size: 1.2rem;
-
   padding: 2px;
 }
 .weather-details {
@@ -124,7 +123,6 @@ button i {
 }
 
 .current-weather .active {
-  color: rgb(31, 30, 30);
   cursor: default;
   text-decoration: none;
 }
@@ -144,7 +142,6 @@ button i {
 .future-weather-icon {
   width: 61px;
   background: #ffffff;
-
   border-radius: 10px;
   margin: 0.2rem 0.8rem;
   padding: 8px 0;
@@ -156,7 +153,7 @@ button i {
 }
 
 .future-weather-icon img {
-  width: 3rem;
+  width: 3.2rem;
   height: 1.9rem;
   position: relative;
   bottom: 5px;
@@ -166,7 +163,8 @@ button i {
   font-weight: 550;
 }
 .future-weather-icon .min-temp {
-  font-weight: 400;
+  padding: 2px;
+  font-weight: 370;
 }
 
 #weather-animation {
@@ -175,65 +173,6 @@ button i {
 }
 .weather-container {
   max-width: 1000px;
-}
-.cloud-container i {
-  font-size: 5rem;
-  color: #fff;
-  text-shadow: 0 0 8px #fff;
-  position: relative;
-  top: -150px;
-  margin: 12px;
-}
-.cloud-row {
-  width: 900px;
-}
-.cloud-top {
-  animation: move-top 15s ease-in-out infinite alternate;
-}
-@keyframes move-top {
-  0% {
-    transform: translateX(0%);
-  }
-
-  50% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(-20%);
-  }
-}
-.cloud-middle {
-  animation: move-middle 18s ease-in-out infinite alternate;
-}
-@keyframes move-middle {
-  0% {
-    transform: translateX(0%);
-  }
-
-  50% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(-20%);
-  }
-}
-.cloud-bottom {
-  animation: move-bottom 21s ease-in-out infinite alternate;
-}
-@keyframes move-bottom {
-  0% {
-    transform: translateX(0%);
-  }
-
-  50% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(-20%);
-  }
 }
 
 .clear-sky {
@@ -304,7 +243,65 @@ button i {
     transform: translateX(30px);
   }
 }
+.cloud-container i {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  position: relative;
+  top: -150px;
+  margin: 12px;
+}
+.cloud-row {
+  width: 900px;
+}
+.cloud-top {
+  animation: move-top 15s ease-in-out infinite alternate;
+}
+@keyframes move-top {
+  0% {
+    transform: translateX(0%);
+  }
 
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.cloud-middle {
+  animation: move-middle 18s ease-in-out infinite alternate;
+}
+@keyframes move-middle {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.cloud-bottom {
+  animation: move-bottom 21s ease-in-out infinite alternate;
+}
+@keyframes move-bottom {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
 .rain-cloud-top,
 .rain-cloud-middle,
 .rain-cloud-bottom {
@@ -331,30 +328,35 @@ button i {
 
 .rain-one,
 .rain-two,
-.rain-three {
-  font-size: 3rem;
-  position: relative;
-  right: 10px;
-  bottom: 220px;
-  z-index: 1;
-}
+.rain-three,
 .rain-four,
 .rain-five,
-.rain-six {
-  font-size: 3rem;
-  position: relative;
-  right: 70px;
-  bottom: 290px;
-  z-index: 1;
-}
+.rain-six,
 .rain-seven,
 .rain-eight,
 .rain-nine {
   font-size: 3rem;
   position: relative;
+  z-index: 1;
+}
+
+.rain-one,
+.rain-two,
+.rain-three {
+  right: 10px;
+  bottom: 220px;
+}
+.rain-four,
+.rain-five,
+.rain-six {
+  right: 70px;
+  bottom: 290px;
+}
+.rain-seven,
+.rain-eight,
+.rain-nine {
   left: 130px;
   bottom: 330px;
-  z-index: 1;
 }
 
 .rain-one,
@@ -483,7 +485,6 @@ button i {
 .snow-two,
 .snow-three {
   color: rgb(240, 240, 240);
-
   font-size: 3rem;
   position: relative;
   right: 30px;
@@ -609,6 +610,13 @@ button i {
   }
 }
 .open-source-link {
+  text-decoration: none;
   position: relative;
-  bottom: 80px;
+  top: -420px;
+  right: -470px;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+.open-source-link a {
+  text-decoration: none;
 }
