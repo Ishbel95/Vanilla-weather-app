@@ -8,9 +8,10 @@ h1 {
   font-weight: 600;
   line-height: 1;
   position: relative;
+  top: 2px;
   left: 10px;
+  margin-top: 3px;
   padding-top: 5px;
-  padding-bottom: 3px;
 }
 
 button i {
@@ -22,7 +23,7 @@ button i {
   padding: 15px;
   display: block;
   width: 480px;
-  height: 750px;
+  height: 755px;
   margin: 20px auto;
   border-radius: 5px;
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
@@ -36,27 +37,6 @@ button i {
   100% {
     background-position: right;
   }
-}
-
-.weather-app-high-temp {
-  border: linear-gradient(
-    45deg,
-    rgba(255, 130, 27, 0.733) -27.5%,
-    rgba(255, 252, 56, 0.555) 94.7%
-  );
-  padding: 15px;
-  display: block;
-  width: 480px;
-  height: 750px;
-  margin: 20px auto;
-  border-radius: 5px;
-  background-image: linear-gradient(
-    45deg,
-    rgba(255, 130, 27, 0.733) -27.5%,
-    rgba(255, 252, 56, 0.555) 94.7%
-  );
-  background-size: 900%;
-  animation: bg-animation-high 5s infinite alternate;
 }
 
 @keyframes bg-animation-high {
@@ -91,24 +71,40 @@ button i {
 
 #current-time {
   font-size: 1.2rem;
+
   padding: 2px;
 }
 .weather-details {
   margin: 5px;
   position: relative;
+  top: 3px;
   left: 7px;
 }
 .current-weather {
   position: relative;
-  left: 320px;
-  bottom: 167px;
+  left: 150px;
+  bottom: 165px;
   font-size: 1.1rem;
 }
+
+.current-weather-temperature,
+#weather-description,
+.current-weather img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .current-weather-temperature {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  bottom: 2px;
+  margin-bottom: 5px;
+}
+.current-weather img {
+  width: 150px;
+  margin: 0 auto;
+}
+
+#weather-description {
+  margin-bottom: 10px;
 }
 .current-weather span {
   font-size: 2rem;
@@ -124,6 +120,7 @@ button i {
   color: rgb(45, 44, 44);
   font-size: 1rem;
   text-decoration: none;
+  padding: 3px;
 }
 
 .current-weather .active {
@@ -132,24 +129,6 @@ button i {
   text-decoration: none;
 }
 
-.current-weather img {
-  width: 150px;
-  position: relative;
-  top: 7px;
-  padding-top: 5px;
-  right: 25px;
-  vertical-align: middle;
-}
-.current-weather .weather-description-positioning {
-  position: relative;
-  right: 170px;
-}
-#weather-description {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .future-weather-box {
   border: 2px solid linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);

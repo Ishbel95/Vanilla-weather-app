@@ -100,14 +100,7 @@ function showCityTemperature(response) {
   document.querySelector("#temp-change").innerHTML = Math.round(
     response.data.main.temp
   );
-  console.log(celsiusTemperature);
-  if (celsiusTemperature >= 20) {
-    let appHighTemp = document.querySelector("#app-temp-high");
-    appHighTemp.classList.replace("weather-app", "weather-app-high-temp");
-  } else if (celsiusTemperature < 20) {
-    let appHighTemp = document.querySelector("#app-temp-high");
-    appHighTemp.classList.replace("weather-app-high-temp", "weather-app");
-  }
+
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#weather-description").style.textTransform =
