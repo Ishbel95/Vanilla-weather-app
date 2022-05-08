@@ -101,10 +101,10 @@ function showCityTemperature(response) {
     response.data.main.temp
   );
   console.log(celsiusTemperature);
-  if (celsiusTemperature >= 30) {
+  if (celsiusTemperature >= 20) {
     let appHighTemp = document.querySelector("#app-temp-high");
     appHighTemp.classList.replace("weather-app", "weather-app-high-temp");
-  } else if (celsiusTemperature < 30) {
+  } else if (celsiusTemperature < 20) {
     let appHighTemp = document.querySelector("#app-temp-high");
     appHighTemp.classList.replace("weather-app-high-temp", "weather-app");
   }
@@ -117,9 +117,9 @@ function showCityTemperature(response) {
     "#humidity"
   ).innerHTML = ` ${response.data.main.humidity}`;
   document.querySelector("#wind").innerHTML = ` ${response.data.wind.speed}`;
-  document.querySelector(
-    "#feels-like"
-  ).innerHTML = ` ${response.data.main.feels_like}`;
+  document.querySelector("#feels-like").innerHTML = ` ${Math.round(
+    response.data.main.feels_like
+  )}`;
 
   document.querySelector("#current-time").innerHTML = changeDate(
     response.data.dt * 1000

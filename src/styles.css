@@ -9,7 +9,8 @@ h1 {
   line-height: 1;
   position: relative;
   left: 10px;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 3px;
 }
 
 button i {
@@ -21,7 +22,7 @@ button i {
   padding: 15px;
   display: block;
   width: 480px;
-  height: 725px;
+  height: 750px;
   margin: 20px auto;
   border-radius: 5px;
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
@@ -41,18 +42,18 @@ button i {
   border: linear-gradient(
     45deg,
     rgba(255, 130, 27, 0.733) -27.5%,
-    rgba(255, 252, 56, 0.63) 94.7%
+    rgba(255, 252, 56, 0.555) 94.7%
   );
   padding: 15px;
   display: block;
   width: 480px;
-  height: 730px;
+  height: 750px;
   margin: 20px auto;
   border-radius: 5px;
   background-image: linear-gradient(
     45deg,
     rgba(255, 130, 27, 0.733) -27.5%,
-    rgba(255, 252, 56, 0.63) 94.7%
+    rgba(255, 252, 56, 0.555) 94.7%
   );
   background-size: 900%;
   animation: bg-animation-high 5s infinite alternate;
@@ -89,7 +90,7 @@ button i {
 }
 
 #current-time {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 2px;
 }
 .weather-details {
@@ -100,12 +101,14 @@ button i {
 .current-weather {
   position: relative;
   left: 320px;
-  bottom: 170px;
+  bottom: 167px;
+  font-size: 1.1rem;
 }
 .current-weather-temperature {
   position: relative;
   top: 10px;
   left: 10px;
+  bottom: 2px;
 }
 .current-weather span {
   font-size: 2rem;
@@ -130,15 +133,22 @@ button i {
 }
 
 .current-weather img {
-  width: 170px;
+  width: 150px;
   position: relative;
   top: 7px;
-  right: 30px;
+  padding-top: 5px;
+  right: 25px;
+  vertical-align: middle;
 }
-.current-weather p {
-  font-size: 1rem;
+.current-weather .weather-description-positioning {
   position: relative;
-  top: 3px;
+  right: 170px;
+}
+#weather-description {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .future-weather-box {
   border: 2px solid linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100% 0.2);
@@ -147,7 +157,7 @@ button i {
   max-width: 450px;
   position: relative;
   left: 10px;
-  top: -170px;
+  top: -165px;
   padding: 5px;
   border-radius: 5px;
   margin-top: 2px;
@@ -178,6 +188,11 @@ button i {
 }
 .future-weather-icon .min-temp {
   font-weight: 400;
+}
+
+#weather-animation {
+  position: relative;
+  top: -10px;
 }
 .weather-container {
   max-width: 1000px;
@@ -245,8 +260,8 @@ button i {
 .clear-sky {
   width: 15rem;
   position: relative;
-  top: -127px;
-  left: 110px;
+  top: -117px;
+  left: 105px;
   animation: rotate 25s infinite ease-in-out alternate;
 }
 @keyframes rotate {
@@ -263,7 +278,7 @@ button i {
   position: relative;
   top: -120px;
   left: -80px;
-  animation: spin 25s infinite ease-in-out;
+  animation: spin 35s infinite ease-in-out;
 }
 @keyframes spin {
   0% {
@@ -279,7 +294,7 @@ button i {
   color: #fff;
   text-shadow: 0 0 8px #fff;
   position: relative;
-  left: 40px;
+  left: 45px;
   bottom: 100px;
   animation: move-left 5s infinite alternate;
 }
@@ -451,10 +466,12 @@ button i {
 }
 @keyframes glow {
   0% {
-    text-shadow: 0 0 5px #fff;
+    transform: translateY(0px);
+    text-shadow: 0 0 0px #fff;
     color: rgb(255, 255, 255 0);
   }
   100% {
+    transform: translateY(10px);
     text-shadow: 0 0 30px #fff;
     color: #fff;
   }
@@ -464,7 +481,7 @@ button i {
 .snow-cloud-middle,
 .snow-cloud-bottom {
   font-size: 9rem;
-  color: rgb(206, 206, 206);
+  color: rgb(219, 218, 218);
   text-shadow: 0 0 8px #fff;
   position: relative;
 }
@@ -487,7 +504,7 @@ button i {
 .snow-two,
 .snow-three {
   color: rgb(240, 240, 240);
-  text-shadow: 0 0 20px #fff;
+
   font-size: 3rem;
   position: relative;
   right: 30px;
@@ -495,41 +512,47 @@ button i {
   z-index: 6;
 }
 .snow-one {
-  left: -10px;
+  left: -6px;
   bottom: 210px;
   animation: rotate-fast 20s infinite alternate;
 }
 @keyframes rotate-fast {
   0% {
+    text-shadow: 0 0 5px #fff;
     transform: rotate(0deg);
   }
   100% {
+    text-shadow: 0 0 20px #fff;
     transform: rotate(400deg);
   }
 }
 .snow-two {
-  right: 10px;
+  right: 4px;
   bottom: 190px;
   animation: rotate-moderate 20.5s infinite alternate;
 }
 @keyframes rotate-moderate {
   0% {
+    text-shadow: 0 0 5px #fff;
     transform: rotate(0deg);
   }
   100% {
+    text-shadow: 0 0 20px #fff;
     transform: rotate(-400deg);
   }
 }
 .snow-three {
-  right: 100px;
-  bottom: 150px;
+  right: 94px;
+  bottom: 147px;
   animation: rotate-slow 21s infinite alternate;
 }
 @keyframes rotate-slow {
   0% {
+    text-shadow: 0 0 5px #fff;
     transform: rotate(0deg);
   }
   100% {
+    text-shadow: 0 0 20px #fff;
     transform: rotate(400deg);
   }
 }
@@ -539,7 +562,7 @@ button i {
 }
 .cloud-fog {
   position: relative;
-  bottom: 170px;
+  bottom: 150px;
   left: 100px;
   color: rgb(255, 255, 255);
   text-shadow: 0 0 8px #fff;
@@ -557,7 +580,7 @@ button i {
 }
 .fog .fog-top {
   position: relative;
-  bottom: 480px;
+  bottom: 460px;
   left: 120px;
   animation: mist-move-top 5s infinite alternate;
 }
@@ -574,7 +597,7 @@ button i {
 }
 .fog .fog-middle {
   position: relative;
-  bottom: 430px;
+  bottom: 410px;
   right: 50px;
   animation: mist-move-middle 5s infinite alternate;
 }
@@ -591,7 +614,7 @@ button i {
 }
 .fog .fog-bottom {
   position: relative;
-  bottom: 660px;
+  bottom: 640px;
   left: 135px;
   animation: mist-move-bottom 5s infinite alternate;
 }
@@ -608,6 +631,5 @@ button i {
 }
 .open-source-link {
   position: relative;
-  left: 5px;
-  bottom: 178px;
+  bottom: 80px;
 }
