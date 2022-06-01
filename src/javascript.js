@@ -45,29 +45,29 @@ function displayForecast(response) {
     let futureWeatherIcon = "future-weather-icon";
     let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
     if (forecastImage === "01d" || forecastImage === "01n") {
-      iconSource = `images/clearsky.png`;
+      iconSource = `/images/clearsky.png`;
     } else if (forecastImage === "02d" || forecastImage === "02n") {
-      iconSource = `images/sunandcloud.png`;
+      iconSource = `/images/sunandcloud.png`;
     } else if (
       forecastImage === "03d" ||
       forecastImage === "03n" ||
       forecastImage === "04d" ||
       forecastImage === "04n"
     ) {
-      iconSource = `images/cloudy.png`;
+      iconSource = `/images/cloudy.png`;
     } else if (
       forecastImage === "09d" ||
       forecastImage === "09n" ||
       forecastImage === "10d" ||
       forecastImage === "10n"
     ) {
-      iconSource = `images/raining.png`;
+      iconSource = `/images/raining.png`;
     } else if (forecastImage === "11d" || forecastImage === "11n") {
-      iconSource = `images/thunder.png`;
+      iconSource = `/images/thunder.png`;
     } else if (forecastImage === "13d" || forecastImage === "13n") {
-      iconSource = `images/snowing.png`;
+      iconSource = `/images/snowing.png`;
     } else if (forecastImage === "50d" || forecastImage === "50n") {
-      iconSource = `images/fog.png`;
+      iconSource = `/images/fog.png`;
     }
     if (index < 5) {
       forecastHTML =
