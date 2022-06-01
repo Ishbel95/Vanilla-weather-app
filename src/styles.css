@@ -49,24 +49,24 @@ button i {
 }
 @media (max-width: 425px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
   .weather-app {
-    width: 45vh;
+    width: 47vh;
     height: 50vh;
   }
   .weather-details div #last-updated {
     font-size: 0.9em;
   }
   .future-weather-icon {
-    width: 10px;
+    width: 8px;
     margin: 0.4em !important;
   }
   .future-weather-box {
     width: 23.5em;
   }
   .current-weather {
-    font-size: 1em !important;
+    font-size: 0.9em !important;
     left: 126px !important;
   }
   #weather-animation {
@@ -78,7 +78,7 @@ button i {
     font-size: 2em;
   }
   .weather-app {
-    width: 39vh;
+    width: 42vh;
     height: 50vh;
   }
   .weather-details div #last-updated {
@@ -101,10 +101,10 @@ button i {
 }
 @media (max-width: 320px) {
   h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
   .weather-app {
-    width: 34vh;
+    width: 35.5vh;
     height: 47vh;
   }
   .weather-details div #last-updated {
@@ -119,7 +119,7 @@ button i {
   }
   .current-weather {
     font-size: 0.7em !important;
-    left: 96px !important;
+    left: 90px !important;
     top: -158px;
   }
   #weather-animation {
