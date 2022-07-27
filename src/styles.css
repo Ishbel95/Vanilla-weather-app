@@ -23,7 +23,8 @@ button i {
   padding: 15px;
   display: block;
   width: min(100%, 480px);
-  margin: 20px auto;
+  height: 95vh;
+  margin: 2% auto;
   border-radius: 5px;
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   background-size: 700%;
@@ -161,8 +162,16 @@ button i {
 }
 .weather-container {
   max-width: 1000px;
+  margin-top: 10rem;
 }
-
+@media (max-width: 455px) {
+  .weather-container {
+    display: none;
+  }
+  .weather-app {
+    height: 100%;
+  }
+}
 .clear-sky {
   width: 15rem;
   position: relative;
