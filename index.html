@@ -64,40 +64,36 @@
         <div class="row">
           <div class="col-12">
             <h1 id="city"></h1>
+            <h2 id="last-updated" class="ms-2 p-2"></h2>
           </div>
-          <div class="weather-details">
-            <div class="col-12">
-              <h2 id="last-updated"></h2>
-            </div>
-            <div class="col-12">
+          <div class="col-md-7">
+            <div class="weather-details m-2">
               <p>
-                <i class="fa-solid fa-droplet"></i><span id="humidity"></span>%
+                <i class="fa-solid fa-droplet p-2"></i
+                ><span id="humidity"></span>%
               </p>
-            </div>
-            <div class="col-12">
-              <p><i class="fa-solid fa-wind"></i><span id="wind"></span>km/h</p>
-            </div>
-            <div class="col-12">
-              <p>Feels like: <span id="feels-like"></span>℃</p>
+
+              <p>
+                <i class="fa-solid fa-wind p-2"></i><span id="wind"></span>km/h
+              </p>
+
+              <p class="p-2">Feels like: <span id="feels-like"></span>℃</p>
             </div>
           </div>
-          <div class="current-weather">
-            <div class="col-12">
+          <div class="col-md-5">
+            <div class="current-weather">
               <div class="current-weather-temperature">
                 <span id="temp-change"></span
                 ><a href="#" id="celsius" class="active">℃</a>
                 <small>|</small>
                 <a href="#" id="fahrenheit"> ℉</a>
               </div>
-            </div>
-            <div class="col-12">
               <img
                 src="#"
                 alt="current weather image"
                 id="current-weather-icon"
               />
-            </div>
-            <div class="col-12">
+
               <div id="weather-description"></div>
             </div>
           </div>
