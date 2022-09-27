@@ -44,6 +44,7 @@ function displayForecast(response) {
     let forecastImage = forecastDay.weather[0].icon;
     let futureWeatherIcon = "future-weather-icon";
     let iconSource = `https://openweathermap.org/img/wn/${forecastImage}@2x.png`;
+    // change icons to my icons using conditional rendering
     if (forecastImage === "01d" || forecastImage === "01n") {
       iconSource = `/images/clearsky.png`;
     } else if (forecastImage === "02d" || forecastImage === "02n") {
@@ -89,7 +90,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-//get apiurl using axios for the forecast
+//make api call and then display forecast
 function getWeatherForecast(coordinates) {
   let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/onecall?";
@@ -283,7 +284,7 @@ function showCityTemperature(response) {
   getWeatherForecast(response.data.coord);
 }
 
-// build url and use axios to get url then execute showCityTemperature function.
+// build url and make api call then execute showCityTemperature function.
 //connect the search input value to the city entered and get the information for that city from the api.
 function selectedCity(city) {
   let apiKey = "1244d051e74e0f794e1452d1e9bf9e68";
@@ -350,7 +351,7 @@ function showCelsius(event) {
 
 let celsiusTemperature = null;
 
-// select fahrenheit button and execute function
+// click fahrenheit button and execute function
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 
@@ -358,11 +359,11 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", weatherSearch);
 
-// select celsius button and execute function
+// click celsius button and execute function
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
 
-//select button and execute myPosition function
+//click button and execute myPosition function
 let geoButton = document.querySelector("#geo-location");
 geoButton.addEventListener("click", myPosition);
 
