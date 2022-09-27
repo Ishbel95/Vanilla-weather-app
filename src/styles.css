@@ -23,7 +23,7 @@ button i {
   padding: 15px;
   display: block;
   width: min(100%, 480px);
-  height: 125vh;
+  height: 820px;
   margin: 2% auto;
   border-radius: 5px;
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
